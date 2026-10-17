@@ -1,0 +1,14 @@
+{
+  "enabledPlugins": {
+    "sdd-engineering@home-ai-marketplace-learning": true,
+    "engineering-paved-path@home-ai-marketplace-learning": true
+  },
+  "extraKnownMarketplaces": {
+    "home-ai-marketplace-learning": {
+      "source": {
+        "source": "github",
+        "repo": "ochubey/home-ai-marketplace-learning"
+      }
+    }
+  }
+}
