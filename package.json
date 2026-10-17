@@ -1,0 +1,9 @@
+{
+  "name": "home-ai-checklist-demo",
+  "version": "0.1.0",
+  "description": "A tiny checklist CLI used to try the home-ai-marketplace-learning plugins.",
+  "type": "module",
+  "bin": { "checklist": "./checklist.mjs" },
+  "scripts": { "test": "node --test" },
+  "license": "MIT"
+}
