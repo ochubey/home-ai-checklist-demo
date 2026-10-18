@@ -7,6 +7,7 @@ A tiny checklist command line tool. It is a practice target for the plugins in
 node checklist.mjs add "buy milk"
 node checklist.mjs list
 node checklist.mjs toggle 1
+node checklist.mjs remove 1
 npm test
 ```
 

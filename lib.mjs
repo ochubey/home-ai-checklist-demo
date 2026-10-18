@@ -12,6 +12,11 @@ export function toggleItem(items, id) {
   return items.map((item) => (item.id === id ? { ...item, done: !item.done } : item));
 }
 
+export function removeItem(items, id) {
+  if (!items.some((item) => item.id === id)) throw new Error(`no item ${id}`);
+  return items.filter((item) => item.id !== id);
+}
+
 export function formatItems(items) {
   if (items.length === 0) return 'The checklist is empty.';
   return items.map((item) => `${item.done ? '[x]' : '[ ]'} ${item.id}. ${item.text}`).join('\n');

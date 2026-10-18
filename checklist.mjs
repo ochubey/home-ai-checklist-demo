@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
-import { addItem, formatItems, toggleItem } from './lib.mjs';
+import { addItem, formatItems, removeItem, toggleItem } from './lib.mjs';
 
 const FILE = process.env.CHECKLIST_FILE ?? 'checklist.json';
 const load = () => (existsSync(FILE) ? JSON.parse(readFileSync(FILE, 'utf8')) : []);
@@ -12,10 +12,12 @@ try {
     save(addItem(load(), args.join(' ')));
   } else if (command === 'toggle') {
     save(toggleItem(load(), Number(args[0])));
+  } else if (command === 'remove') {
+    save(removeItem(load(), Number(args[0])));
   } else if (command === 'list' || command === undefined) {
     console.log(formatItems(load()));
   } else {
-    console.error('usage: checklist [list | add <text> | toggle <id>]');
+    console.error('usage: checklist [list | add <text> | toggle <id> | remove <id>]');
     process.exitCode = 2;
   }
 } catch (error) {
